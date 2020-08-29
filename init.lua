@@ -65,6 +65,30 @@ more_mese_post_light.register_mesepost(":default:mese_post_light_aspen_wood", {
 	texture = "default_fence_aspen_wood.png",
 	material = "default:aspen_wood",
 })
+
+more_mese_post_light.register_mesepost("more_mese_post_light:mese_post_light_steelblock", {
+	description = S("Steel Mese Post Light"),
+	texture = "default_steel_block.png",
+	material = "default:steel_ingot",
+	groups = {cracky = 1, level = 2},
+	sounds = default.node_sound_metal_defaults(),
+})
+
+more_mese_post_light.register_mesepost("more_mese_post_light:mese_post_light_grass", {
+	description = S("Grass Mese Post Light"),
+	texture = "default_grass.png",
+	material = "group:grass",
+	groups = {snappy = 3, flora = 1, attached_node = 1, flammable = 1},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
+more_mese_post_light.register_mesepost("more_mese_post_light:mese_post_light_ice", {
+	description = S("Ice Mese Post Light"),
+	texture = "default_ice.png",
+	material = "default:ice",
+	groups = {cracky = 3, slippery = 3},
+	sounds = default.node_sound_glass_defaults(),
+})
 if minetest.get_modpath("ethereal") then
 	more_mese_post_light.register_mesepost("more_mese_post_light:mese_post_light_sakura_wood", {
 		description = S("Sakura Wood Mese Post Light"),
