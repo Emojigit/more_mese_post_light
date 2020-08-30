@@ -1,5 +1,8 @@
 more_mese_post_light = {}
 function S(x) return x end
+
+
+
 function more_mese_post_light.register_mesepost(name, def)
 	minetest.register_craft({
 		output = name .. " 4",
@@ -136,10 +139,42 @@ if minetest.get_modpath("ethereal") then
 		material = "ethereal:mushroom_trunk",
 	})
 	more_mese_post_light.register_mesepost("more_mese_post_light:mese_post_light_birch_wood", {
-		description = S("Brich Wood Post Light"),
+		description = S("Brich Wood Mese Post Light"),
 		texture = "moretrees_birch_wood.png",
 		material = "ethereal:birch_wood",
 	})
 end
+
+if minetest.get_modpath("technic_worldgen") then
+	more_mese_post_light.register_mesepost("more_mese_post_light:mese_post_light_granite", {
+		description = S("Granite Mese Post Light"),
+		texture = "technic_granite.png",
+		material = "technic:granite",
+		groups = {cracky=1},
+	})
+	more_mese_post_light.register_mesepost("more_mese_post_light:mese_post_light_marble", {
+		description = S("Marble Mese Post Light"),
+		texture = "technic_marble.png",
+		material = "technic:marble",
+		groups = {cracky=3},
+	})
+	local stpost_texture = "technic_wrought_iron_block.png^more_mese_post_light_mese_post_light_side.png^[makealpha:0,0,0"
+	local stpost_texture_dark = "technic_wrought_iron_block.png^more_mese_post_light_mese_post_light_side_dark.png^[makealpha:0,0,0"
+	minetest.override_item("more_mese_post_light:mese_post_light_steelblock", {
+		description = S("Wrought Iron Mese Post Light"),
+		tiles = {"technic_wrought_iron_block.png", "technic_wrought_iron_block.png", stpost_texture_dark, stpost_texture_dark, stpost_texture, stpost_texture},
+	})
+	
+end
+
+if minetest.get_modpath("technic") then
+	more_mese_post_light.register_mesepost("more_mese_post_light:mese_post_light_blast_resistant_concrete", {
+		description = S("Blast-resistant Concrete Mese Post Light"),
+		texture = "technic_blast_resistant_concrete_block.png",
+		material = "technic:blast_resistant_concrete",
+	})
+end
+
+
 
 
